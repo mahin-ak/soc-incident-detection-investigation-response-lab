@@ -47,6 +47,7 @@ The project demonstrates a practical SOC workflow:
 
 ## SOC Investigation Workflow
 
+```text
 Windows Endpoint
        |
        v
@@ -72,3 +73,66 @@ MITRE ATT&CK Mapping
        |
        v
 Incident Documentation
+```
+
+## SOC Dashboard
+
+The project includes a Splunk dashboard covering:
+
+- Failed Administrator Logons
+- Suspicious PowerShell Execution
+- Suspicious Command-Line Activity
+- Last 24 hours monitoring
+
+Dashboard evidence is available in the `screenshots` directory.
+
+## Repository Structure
+
+```text
+├── README.md
+├── detections/
+│   ├── failed-administrator-logons.md
+│   ├── suspicious-powershell.md
+│   └── suspicious-command-line.md
+├── docs/
+│   ├── lab-architecture.md
+│   ├── mitre-attack-mapping.md
+│   └── incident-reports/
+│       ├── incident-report-01-failed-admin-logons.md
+│       └── incident-report-02-suspicious-powershell.md
+├── screenshots/
+└── spl/
+    ├── failed-admin-logons.spl
+    ├── suspicious-powershell.spl
+    └── suspicious-command-line.spl
+```
+
+## Skills Demonstrated
+
+- Splunk SIEM
+- SPL detection queries
+- Windows Security Event Analysis
+- Sysmon telemetry analysis
+- Alert triage
+- Process and command-line investigation
+- Detection engineering
+- MITRE ATT&CK mapping
+- Incident documentation
+- SOC dashboard development
+
+## Project Deliverables
+
+- 3 SOC detection use cases
+- 3 Splunk detection queries
+- Scheduled Splunk alerts
+- MITRE ATT&CK mapping
+- 2 incident investigation reports
+- SOC monitoring dashboard
+- Investigation evidence screenshots
+- Lab architecture documentation
+
+## Lab Disclaimer
+
+This project was conducted in an isolated virtual lab environment using controlled test activity.
+
+The simulated events were created for cybersecurity learning, detection engineering, and SOC investigation practice. The presence of a detection does not by itself establish malicious activity or a confirmed compromise.
