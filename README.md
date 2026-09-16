@@ -2,63 +2,56 @@
 
 A hands-on Security Operations Center (SOC) lab focused on Windows security monitoring, threat detection, alert investigation, and incident response using Splunk, Sysmon, and MITRE ATT&CK.
 
-## Project Overview
+## 🎯 Project Objective
 
-This project simulates a small SOC environment where Windows security and Sysmon telemetry are collected, analyzed, and used to detect suspicious activity.
+This project simulates a small SOC environment where Windows endpoint telemetry is collected, analyzed, and used to detect suspicious activity.
 
-The lab demonstrates practical SOC workflows including:
+The project demonstrates a practical SOC workflow:
 
-- Security event collection and monitoring
-- SIEM-based alert detection
-- Alert investigation and triage
-- True-positive / false-positive analysis
-- MITRE ATT&CK mapping
-- Incident documentation
-- Detection engineering
-- SOC dashboard creation
+**Collect → Detect → Investigate → Map → Document → Respond**
 
-## Lab Environment
+## 🏗️ Lab Environment
 
 | Component | Technology |
 |---|---|
 | SIEM | Splunk Enterprise |
+| Endpoint | Windows 10 |
 | Endpoint Telemetry | Sysmon |
 | Log Collection | Splunk Universal Forwarder |
-| Endpoint | Windows 10 |
-| SIEM Server | Windows Server |
+| Server | Windows Server |
 | Virtualization | VirtualBox |
 | Threat Framework | MITRE ATT&CK |
 
-## Detection Use Cases
+## 🔎 Detection Use Cases
 
 ### 1. Repeated Failed Administrator Logons
 
-- Windows Event ID: `4625`
-- Detection: Repeated failed Administrator authentication attempts
-- MITRE ATT&CK: `T1110 - Brute Force`
-- Investigation includes authentication status, logon type, source address, and caller process.
+- Windows Security Event ID: `4625`
+- Detection focus: Failed Administrator authentication attempts
+- MITRE ATT&CK: `T1110 — Brute Force`
+- Investigation: Account, failure reason, status codes, logon type, source address, and caller process
 
 ### 2. Suspicious PowerShell Execution
 
 - Sysmon Event ID: `1`
-- Detection: PowerShell execution using `ExecutionPolicy Bypass`
-- MITRE ATT&CK: `T1059.001 - PowerShell`
-- Investigation includes command line, user, parent process, and execution context.
+- Detection focus: PowerShell execution containing `ExecutionPolicy` or `Bypass`
+- MITRE ATT&CK: `T1059.001 — PowerShell`
+- Investigation: User, command line, process image, and parent process
 
 ### 3. Suspicious Command-Line Activity
 
 - Sysmon Event ID: `1`
-- Detection: Suspicious Windows command-shell activity
-- MITRE ATT&CK: `T1059.003 - Windows Command Shell`
-- Investigation includes command line, process, user, and parent process.
+- Detection focus: Selected Windows command-line activity
+- MITRE ATT&CK: `T1059.003 — Windows Command Shell`
+- Investigation: User, command line, process image, and parent process
 
-## SOC Workflow
+## 🧪 SOC Investigation Workflow
 
 ```text
 Windows Endpoint
        |
        v
-Sysmon / Windows Security Logs
+Windows Security Logs + Sysmon
        |
        v
 Splunk Universal Forwarder
@@ -70,7 +63,10 @@ Splunk Enterprise SIEM
 Detection Rules
        |
        v
-Alert Investigation
+Scheduled Alerts
+       |
+       v
+Alert Triage & Investigation
        |
        v
 MITRE ATT&CK Mapping
