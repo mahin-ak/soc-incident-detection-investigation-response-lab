@@ -47,7 +47,6 @@ The project demonstrates a practical SOC workflow:
 
 ## SOC Investigation Workflow
 
-```text
 Windows Endpoint
        |
        v
