@@ -1,0 +1,6 @@
+index=sysmon EventCode=1
+| search CommandLine="*whoami*"
+| eval Severity="Medium"
+| eval Detection="Suspicious Command-Line Activity"
+| table _time host User Image CommandLine ParentImage ParentCommandLine Severity Detection
+| sort - _time

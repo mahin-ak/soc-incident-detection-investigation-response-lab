@@ -1,0 +1,5 @@
+index=* host="DESKTOP-681O1RG" EventCode=4625 Account_Name="Administrator"
+| eval Detection="Repeated Failed Administrator Logons"
+| eval Severity="Medium"
+| table _time host Account_Name Account_Domain Failure_Reason Status Sub_Status Logon_Type Caller_Process_Name Source_Network_Address Severity Detection
+| sort - _time

@@ -1,0 +1,7 @@
+index=sysmon EventCode=1
+| search Image="*powershell.exe"
+| search CommandLine="*ExecutionPolicy*" OR CommandLine="*Bypass*"
+| eval Severity="High"
+| eval Detection="Suspicious PowerShell Execution"
+| table _time host User Image CommandLine ParentImage ParentCommandLine Severity Detection
+| sort - _time
