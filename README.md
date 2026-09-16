@@ -2,7 +2,7 @@
 
 A hands-on Security Operations Center (SOC) lab focused on Windows security monitoring, threat detection, alert investigation, and incident response using Splunk, Sysmon, and MITRE ATT&CK.
 
-## 🎯 Project Objective
+## Project Objective
 
 This project simulates a small SOC environment where Windows endpoint telemetry is collected, analyzed, and used to detect suspicious activity.
 
@@ -10,7 +10,7 @@ The project demonstrates a practical SOC workflow:
 
 **Collect → Detect → Investigate → Map → Document → Respond**
 
-## 🏗️ Lab Environment
+## Lab Environment
 
 | Component | Technology |
 |---|---|
@@ -22,7 +22,7 @@ The project demonstrates a practical SOC workflow:
 | Virtualization | VirtualBox |
 | Threat Framework | MITRE ATT&CK |
 
-## 🔎 Detection Use Cases
+## Detection Use Cases
 
 ### 1. Repeated Failed Administrator Logons
 
@@ -45,7 +45,7 @@ The project demonstrates a practical SOC workflow:
 - MITRE ATT&CK: `T1059.003 — Windows Command Shell`
 - Investigation: User, command line, process image, and parent process
 
-## 🧪 SOC Investigation Workflow
+## SOC Investigation Workflow
 
 ```text
 Windows Endpoint
